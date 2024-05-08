@@ -30,7 +30,7 @@ export function AuthenticationLogsTable({
 }) {
   return (
     <Datatable<AuthLog>
-      title="Authentication Events"
+      title="Authentication events"
       titleIcon={History}
       columns={columns}
       dataset={dataset || []}
@@ -52,6 +52,7 @@ export function AuthenticationLogsTable({
       isServerSidePagination
       totalCount={totalItems}
       disableSelect
+      data-cy="authentication-logs-datatable"
     />
   );
 }

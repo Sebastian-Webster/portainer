@@ -69,7 +69,7 @@ angular
       url: '/new?templateId&templateType',
       views: {
         'content@': {
-          component: 'createEdgeStackView',
+          component: 'edgeStacksCreateView',
         },
       },
       data: {
@@ -154,7 +154,7 @@ angular
       url: '/templates?template',
       views: {
         'content@': {
-          component: 'edgeAppTemplatesView',
+          component: 'appTemplatesView',
         },
       },
       data: {

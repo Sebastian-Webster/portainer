@@ -44,6 +44,8 @@ export enum StatusType {
   RollingBack,
   /** PausedRemoving represents an Edge stack which has been rolled back */
   RolledBack,
+  /** Completed represents a completed Edge stack */
+  Completed,
 }
 
 export interface DeploymentStatus {
@@ -99,7 +101,4 @@ export type EdgeStack = RelativePathModel & {
   FilesystemPath?: string;
 };
 
-export enum EditorType {
-  Compose,
-  Kubernetes,
-}
+export { DeploymentType as EditorType };

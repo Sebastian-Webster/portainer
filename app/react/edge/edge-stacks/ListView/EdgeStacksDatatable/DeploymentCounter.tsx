@@ -23,6 +23,7 @@ export function DeploymentCounterLink({
         className="hover:no-underline"
         to="edge.stacks.edit"
         params={{ stackId, tab: 1, status: type }}
+        data-cy="deployment-counter-link"
       >
         <DeploymentCounter count={count} type={type} total={total} />
       </Link>
@@ -67,6 +68,8 @@ function getLabel(type: StatusType): ReactNode {
   switch (type) {
     case StatusType.Running:
       return 'deployments running';
+    case StatusType.Completed:
+      return 'deployments completed';
     case StatusType.DeploymentReceived:
       return 'deployments received';
     case StatusType.Error:

@@ -3,9 +3,7 @@ import { DownloadIcon } from 'lucide-react';
 import { Widget } from '@@/Widget';
 import { TextTip } from '@@/Tip/TextTip';
 import { Button } from '@@/buttons';
-import { BEFeatureIndicator } from '@@/BEFeatureIndicator';
 
-import { FeatureId } from '../../feature-flags/enums';
 import { DateRangePicker } from '../components/DateRangePicker';
 
 export function FilterBar({
@@ -33,10 +31,10 @@ export function FilterBar({
               icon={DownloadIcon}
               onClick={onExport}
               className="!ml-0"
+              data-cy="activity-logs-export-csv-button"
             >
               Export as CSV
             </Button>
-            <BEFeatureIndicator featureId={FeatureId.ACTIVITY_AUDIT} />
           </div>
         </form>
       </Widget.Body>

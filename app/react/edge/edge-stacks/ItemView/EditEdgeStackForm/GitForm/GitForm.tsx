@@ -252,7 +252,13 @@ function InnerForm({
           errors={errors.authentication}
         />
 
-        {isBE && <RelativePathFieldset value={values.relativePath} isEditing />}
+        {isBE && (
+          <RelativePathFieldset
+            values={values.relativePath}
+            isEditing
+            onChange={() => {}}
+          />
+        )}
 
         <EnvironmentVariablesPanel
           onChange={(value) => setFieldValue('envVars', value)}
@@ -273,6 +279,7 @@ function InnerForm({
       <FormSection title="Actions">
         <LoadingButton
           disabled={dirty || !isValid || isLoading}
+          data-cy="pull-and-update-stack-button"
           isLoading={isUpdateVersion && isLoading}
           loadingText="updating stack..."
         >
@@ -285,6 +292,7 @@ function InnerForm({
           isLoading={!isUpdateVersion && isLoading}
           loadingText="updating settings..."
           onClick={onUpdateSettingsClick}
+          data-cy="edge-stack-update-settings-button"
         >
           Update settings
         </LoadingButton>
